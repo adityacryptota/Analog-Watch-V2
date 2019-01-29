@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    border: 5px solid rgb(170, 166, 166);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(90deg);
+    transition: all 1s;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('dial.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: bubble 5s ease infinite;
+}
+
+.hand {
+    width: 48%;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    margin-left: 2%;
+    transition: all 0.5s;
+}
+
+.hourHand {
+    border-top: 4px solid white;
+}
+
+.minHand {
+    border-top: 3px solid white;
+}
+
+.secondHand {
+    border-top: 1px solid white;
+}
+
+@media only screen and (max-width: 768px){
+    .content {
+        width: 15rem;
+        height: 15rem;
+    }
+}
+
+@keyframes bubble {
+    20%{
+        transform: scale(1) rotate(90deg);
+    }
+    70% {
+        transform: scale(0.9) rotate(90deg);
+    }
+    100% {
+        transform: scale(1) rotate(90deg);
+    }
+}
